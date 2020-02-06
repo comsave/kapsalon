@@ -131,9 +131,9 @@ class App extends React.Component {
         <Timer>
           <Title>Celebrate Kapsalon in...</Title>
           <Remaining className={`${animation} animated`}>
-            {days > 0 && <div>{days} days</div>}
-            {hours > 0 && <div>{hours} hours</div>}
-            {minutes > 0 && <div>{minutes} minutes</div>}
+            {days > 0 && <div>{days.toFixed(5)} days</div>}
+            {hours > 0 && <div>{hours.toFixed(4)} hours</div>}
+            {minutes > 0 && <div>{minutes.toFixed(3)} minutes</div>}
           </Remaining>
         </Timer>
       </AppWrapper>
