@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/kapsalon/static/css/main.d498bfb3.chunk.css",
+    "main.js": "/kapsalon/static/js/main.bf6625a2.chunk.js",
+    "main.js.map": "/kapsalon/static/js/main.bf6625a2.chunk.js.map",
+    "runtime-main.js": "/kapsalon/static/js/runtime-main.9f7bdace.js",
+    "runtime-main.js.map": "/kapsalon/static/js/runtime-main.9f7bdace.js.map",
+    "static/css/2.e2d51d62.chunk.css": "/kapsalon/static/css/2.e2d51d62.chunk.css",
+    "static/js/2.135c9ec4.chunk.js": "/kapsalon/static/js/2.135c9ec4.chunk.js",
+    "static/js/2.135c9ec4.chunk.js.map": "/kapsalon/static/js/2.135c9ec4.chunk.js.map",
+    "index.html": "/kapsalon/index.html",
+    "precache-manifest.bf82d8ea6db2b56181e6d7053e904714.js": "/kapsalon/precache-manifest.bf82d8ea6db2b56181e6d7053e904714.js",
+    "service-worker.js": "/kapsalon/service-worker.js",
+    "static/css/2.e2d51d62.chunk.css.map": "/kapsalon/static/css/2.e2d51d62.chunk.css.map",
+    "static/css/main.d498bfb3.chunk.css.map": "/kapsalon/static/css/main.d498bfb3.chunk.css.map",
+    "static/js/2.135c9ec4.chunk.js.LICENSE.txt": "/kapsalon/static/js/2.135c9ec4.chunk.js.LICENSE.txt",
+    "static/media/kapsalon.jpeg": "/kapsalon/static/media/kapsalon.1201df11.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9f7bdace.js",
+    "static/css/2.e2d51d62.chunk.css",
+    "static/js/2.135c9ec4.chunk.js",
+    "static/css/main.d498bfb3.chunk.css",
+    "static/js/main.bf6625a2.chunk.js"
+  ]
+}
