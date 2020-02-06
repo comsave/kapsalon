@@ -1,68 +1,34 @@
 import React from 'react';
 import styled from 'styled-components';
+import 'animate.css';
+import * as Kapsalon from './kapsalon.jpeg';
 
 const AppWrapper = styled.div`
-  position:relative;
-  width:100%;
-  height:100%;
-`;
-
-const Clouds = styled.div`
-  background:url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/56901/bg-clouds2-tinypng.png") repeat-x 0 bottom #ACE6FF;
-  width:100%;
-  height:230px; /*190px*/
-  min-height:230px;
-  position:absolute;
-  top:0;
-  left:0;
-  z-index:1;
-  -webkit-transform:translate3d(0,0,0.01);
-  transform:translate3d(0,0,0.01);
-`;
-
-const Ground = styled.div`@-webkit-keyframes rotating /* Safari and Chrome */ {
-  from {
-    -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-@keyframes rotating {
-  from {
-    -ms-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  to {
-    -ms-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-  background:url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/56901/grass_tile-tinypng.png") repeat-x 0 0 transparent;
-  position: absolute;
-  bottom: 0;
-  left: 1000;
-  z-index:2;
-  animate: left;
+  background: url(${Kapsalon}) repeat;
+  background-size: 100%;
+  position: fixed;
   width: 100%;
-  height: 192px;
-  min-height:192px;
-  border:0 none transparent;
-  outline:0 none transparent;
-  -webkit-transform:translate3d(0,0,0.01);
-  transform:translate3d(0,0,0.01);
-  will-change: transform;
+  height: 100%;
 `;
+
+const Timer = styled.div`
+  position: relative;
+  top: 30%;
+  left: 0;
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, .5);
+`;
+
+const Title = styled.div`
+  font-size: 42px;
+  text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
+`;
+
+const Remaining = styled.div`
+  font-size: 42px;
+  color: red;
+`
 
 Date.prototype.addDays = function(days) {
     const date = new Date(this.valueOf());
@@ -87,21 +53,89 @@ const getCelebrationDate = () => {
   return new Date(celebrationDate.getFullYear(), celebrationDate.getMonth(), celebrationDate.getDate(), 12, 0, 0);
 }
 
+const getRandomFromArray = items => items[Math.floor(Math.random()*items.length)];
+
+const availableAnimations = `
+  bounce	flash	pulse	rubberBand
+shake	headShake	swing	tada
+wobble	jello	bounceIn	bounceInDown
+bounceInLeft	bounceInRight	bounceInUp	bounceOut
+bounceOutDown	bounceOutLeft	bounceOutRight	bounceOutUp
+fadeIn	fadeInDown	fadeInDownBig	fadeInLeft
+fadeInLeftBig	fadeInRight	fadeInRightBig	fadeInUp
+fadeInUpBig	fadeOut	fadeOutDown	fadeOutDownBig
+fadeOutLeft	fadeOutLeftBig	fadeOutRight	fadeOutRightBig
+fadeOutUp	fadeOutUpBig	flipInX	flipInY
+flipOutX	flipOutY	lightSpeedIn	lightSpeedOut
+rotateIn	rotateInDownLeft	rotateInDownRight	rotateInUpLeft
+rotateInUpRight	rotateOut	rotateOutDownLeft	rotateOutDownRight
+rotateOutUpLeft	rotateOutUpRight	hinge	jackInTheBox
+rollIn	rollOut	zoomIn	zoomInDown
+zoomInLeft	zoomInRight	zoomInUp	zoomOut
+zoomOutDown	zoomOutLeft	zoomOutRight	zoomOutUp
+slideInDown	slideInLeft	slideInRight	slideInUp
+slideOutDown	slideOutLeft	slideOutRight	slideOutUp
+`.replace(/\s/g, ' ').split(' ');
+
+const getRandomAnimation = () => getRandomFromArray(availableAnimations);
+
 class App extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
+      time: this.getTime(),
+    };
+  }
+
+  componentDidMount() {
+    this.interval = setInterval(() => this.setState({
+      time: this.getTime(),
+    }), 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  getTime() {
+    return getCelebrationDate().getTime() - new Date().getTime();
+  }
+
+  getRemaining() {
+    let days = parseFloat((this.state.time / 1000 / 60 / 60 / 24).toFixed(5));
+    let hours = 0;
+    let minutes = 0;
+
+    if(days < 1) {
+      hours = parseFloat((days * 24).toFixed(4));
+      days = 0;
+    }
+    if(hours > 0 && hours < 1) {
+      minutes = parseFloat((hours / 60).toFixed(3));
+      hours = 0;
+    }
+
+    return {
+      days,
+      hours,
+      minutes,
     };
   }
 
   render() {
-    console.log(getCelebrationDate())
+    const { days, hours, minutes } = this.getRemaining();
+    const animation = getRandomAnimation();
 
     return (
       <AppWrapper>
-        // <Clouds />
-        // <Ground />
+        <Timer>
+          <Title>Celebrate Kapsalon in...</Title>
+          <Remaining className={`${animation} animated`}>
+            {days > 0 && <div>{days} days</div>}
+            {hours > 0 && <div>{hours} hours</div>}
+            {minutes > 0 && <div>{minutes} minutes</div>}
+          </Remaining>
+        </Timer>
       </AppWrapper>
     );
   }
