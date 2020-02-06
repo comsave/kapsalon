@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "529ec510f83db5dad31ca111351d057d",
+    "revision": "33c574fe194d2fd5684730c4901b2ac6",
     "url": "/kapsalon/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kapsalon/static/css/2.e2d51d62.chunk.css"
   },
   {
-    "revision": "3b5fa4005b96c0eed8dd",
+    "revision": "e609b7e6c07753ddcdc5",
     "url": "/kapsalon/static/css/main.d498bfb3.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kapsalon/static/js/2.135c9ec4.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3b5fa4005b96c0eed8dd",
-    "url": "/kapsalon/static/js/main.bf6625a2.chunk.js"
+    "revision": "e609b7e6c07753ddcdc5",
+    "url": "/kapsalon/static/js/main.5718c9ab.chunk.js"
   },
   {
     "revision": "28437d141ee7476723c8",
