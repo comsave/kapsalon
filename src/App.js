@@ -111,7 +111,7 @@ class App extends React.Component {
       days = 0;
     }
     if(hours > 0 && hours < 1) {
-      minutes = parseFloat((hours / 60).toFixed(3));
+      minutes = parseFloat((hours * 60).toFixed(2));
       hours = 0;
     }
 
