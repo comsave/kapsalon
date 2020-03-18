@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/kapsalon/static/css/main.d498bfb3.chunk.css",
-    "main.js": "/kapsalon/static/js/main.146f7b85.chunk.js",
-    "main.js.map": "/kapsalon/static/js/main.146f7b85.chunk.js.map",
+    "main.js": "/kapsalon/static/js/main.eb55b59a.chunk.js",
+    "main.js.map": "/kapsalon/static/js/main.eb55b59a.chunk.js.map",
     "runtime-main.js": "/kapsalon/static/js/runtime-main.9f7bdace.js",
     "runtime-main.js.map": "/kapsalon/static/js/runtime-main.9f7bdace.js.map",
     "static/css/2.e2d51d62.chunk.css": "/kapsalon/static/css/2.e2d51d62.chunk.css",
     "static/js/2.135c9ec4.chunk.js": "/kapsalon/static/js/2.135c9ec4.chunk.js",
     "static/js/2.135c9ec4.chunk.js.map": "/kapsalon/static/js/2.135c9ec4.chunk.js.map",
     "index.html": "/kapsalon/index.html",
-    "precache-manifest.88a7b83f794a81ff7a0dbe10fd47acb0.js": "/kapsalon/precache-manifest.88a7b83f794a81ff7a0dbe10fd47acb0.js",
+    "precache-manifest.45afca14a03d6e09b5d00dd54eb2e2a1.js": "/kapsalon/precache-manifest.45afca14a03d6e09b5d00dd54eb2e2a1.js",
     "service-worker.js": "/kapsalon/service-worker.js",
     "static/css/2.e2d51d62.chunk.css.map": "/kapsalon/static/css/2.e2d51d62.chunk.css.map",
     "static/css/main.d498bfb3.chunk.css.map": "/kapsalon/static/css/main.d498bfb3.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.e2d51d62.chunk.css",
     "static/js/2.135c9ec4.chunk.js",
     "static/css/main.d498bfb3.chunk.css",
-    "static/js/main.146f7b85.chunk.js"
+    "static/js/main.eb55b59a.chunk.js"
   ]
 }
